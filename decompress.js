@@ -7,7 +7,7 @@ const url = "";
 
 const sync = fs.createWriteStream("sync.7z");
 
-const cmd = ['7z','./sync.7z',]
+const cmd = ['7z','e','./sync.7z',]
 
 const request = http.get(url, (response) => {
   response.pipe(sync);
