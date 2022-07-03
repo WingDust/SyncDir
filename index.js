@@ -21,6 +21,7 @@ const captureEmpty = (value,defaultValue)=>{
     default: return value
   }
 }
+const isEmpty = value=>captureEmpty(value,true)
 
 const filterEmpty = (collection)=>{
   if (Array.isArray(collection)) {
