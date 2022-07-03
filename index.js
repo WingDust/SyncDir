@@ -40,7 +40,7 @@ const captureEmpty = (defaultValue,value)=>{
   // 对象
   if (toRawType(value).includes('Object')&&isEmptyObject(value)) return defaultValue
   
-  
+  if (nilValue.includes(value))
   
   switch (JSON.stringify(value)) {
     case '':          return defaultValue    
