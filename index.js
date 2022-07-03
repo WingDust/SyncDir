@@ -74,11 +74,14 @@ const gitignore = fs.readFileSync('.gitignore','utf-8').split('\n')
 // const ig = ignore()
 // const ig = ignore().add(['.abc/*', '!.abc/d/'])
 const ig = ignore().add(filterEmpty(gitignore))
-console.log(ig)
+// console.log(ig)
 // console.log(filterEmpty(gitignore) )
 
 const exclude7z = ()=>{
 }
 
-const cmd = ['7z','a','-t7z','sync.7z','./','']
-child_process.spawn()
+const exclude = ['target','node_modules'].map(i=>`-xr!${i}/`)
+console.log(exclude)
+
+const cmd = ['7z','a','-t7z','sync.7z','./',...exclude]
+child_process.spawn(cmd)
