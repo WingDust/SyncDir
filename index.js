@@ -3,7 +3,7 @@ const fs = require("fs");
 const archiver = require("archiver");
 const ignore = require("ignore");
 
-const captureEmpty = (value,defaultValue)=>{
+const captureEmpty = (defaultValue,value)=>{
   // console.log('val',value,JSON.stringify(value),toRawType(value).includes('HTML'));
 
   // HTMLSpanElement
@@ -21,7 +21,7 @@ const captureEmpty = (value,defaultValue)=>{
     default: return value
   }
 }
-const isEmpty = value=>captureEmpty(value,true)
+const isEmpty = value=>captureEmpty(true,value)
 
 const filterEmpty = (collection)=>{
   if (Array.isArray(collection)) {
