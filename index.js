@@ -39,19 +39,22 @@ const captureEmpty = (defaultValue,value)=>{
   
   // 对象
   if (toRawType(value).includes('Object')&&isEmptyObject(value)) return defaultValue
+  if (toRawType(value).includes('Array')&&value.length===0) return defaultValue
   
-  if (nilValue.includes(value))
+  if (nilValue.includes(value)) return defaultValue
   
-  switch (JSON.stringify(value)) {
-    case '':          return defaultValue    
-    case 'null':      return defaultValue        
-    case undefined: return defaultValue             
-    case '{}':        return defaultValue      
-    case '[]':        return defaultValue      
-    case 'false':return defaultValue
   
-    default: return value
-  }
+  return value
+  // switch (JSON.stringify(value)) {
+  //   case '':          return defaultValue    
+  //   case 'null':      return defaultValue        
+  //   case undefined: return defaultValue             
+  //   case '{}':        return defaultValue      
+  //   case '[]':        return defaultValue      
+  //   case 'false':return defaultValue
+  
+  //   default: return value
+  // }
 }
 const isEmpty = value=>captureEmpty(true,value)
 
