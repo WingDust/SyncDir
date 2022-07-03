@@ -1,7 +1,8 @@
 
 const fs = require("fs");
-const archiver = require("archiver");
+// const archiver = require("archiver");
 const ignore = require("ignore");
+const child_process = require('child_process')
 
 /** 在数据处理过程中 无意义的值
  j 
@@ -76,3 +77,4 @@ const ig = ignore().add(filterEmpty(gitignore))
 console.log(ig)
 // console.log(filterEmpty(gitignore) )
 
+child_process.spawn()
