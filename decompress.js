@@ -1,5 +1,5 @@
 const fs = require("fs");
-const ignore = require("ignore");
+// const ignore = require("ignore");
 const child_process = require("child_process");
 const http = require("http");
 
