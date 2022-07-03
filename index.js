@@ -18,12 +18,12 @@ const toTypeString = (value) =>
  */
 const toRawType = (value) => toTypeString(value).slice(8, -1);
 
+/** 判断对是否为空对象
+ * - 为什么没有使用 JSON.stringify ,性能 
+ */
 const isEmptyObject = (object)=>{
+
   for (const key in object) {
-    if (Object.hasOwnProperty.call(object, key)) {
-      const element = object[key];
-      
-    }
   }
 }
 
