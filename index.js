@@ -3,6 +3,9 @@ const fs = require("fs");
 const archiver = require("archiver");
 const ignore = require("ignore");
 
+/** 在数据处理过程表示 无意义的值
+ * 
+ */
 const nilValue = ['',null,undefined,[],{},false]
 
 const captureEmpty = (defaultValue,value)=>{
