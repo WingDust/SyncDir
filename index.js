@@ -62,7 +62,7 @@ const filterEmpty = (collection)=>{
   if (Array.isArray(collection)) {
     let filterDuplicate = new Set(collection)
     nilValue.forEach(i=>filterDuplicate.delete(i))
-    
+    return Array.from(filterDuplicate)
   }
   
 }
