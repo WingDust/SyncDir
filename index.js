@@ -84,4 +84,4 @@ const exclude = ['target','node_modules'].map(i=>`-xr!${i}/`)
 console.log(exclude)
 
 const cmd = ['7z','a','-t7z','sync.7z','./',...exclude]
-child_process.spawn(cmd[0],cmd.filter(i=>i!==='7z'))
+child_process.spawn(cmd[0],cmd.filter(i=>i!=='7z'))
