@@ -3,7 +3,7 @@ const fs = require("fs");
 const archiver = require("archiver");
 const ignore = require("ignore");
 
-const emptyValue = ['',null,undefined,[],{},false]
+const nilValue = ['',null,undefined,[],{},false]
 
 const captureEmpty = (defaultValue,value)=>{
   // console.log('val',value,JSON.stringify(value),toRawType(value).includes('HTML'));
