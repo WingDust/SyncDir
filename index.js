@@ -8,6 +8,18 @@ const ignore = require("ignore");
  */
 const nilValue = ['',null,undefined,[],{},false]
 
+
+const objectToString = Object.prototype.toString
+const toTypeString = (value) =>
+  objectToString.call(value)
+
+/*p 
+ * 
+ */
+const toRawType = (value) => {
+  return toTypeString(value).slice(8, -1);
+}
+
 const captureEmpty = (defaultValue,value)=>{
   // console.log('val',value,JSON.stringify(value),toRawType(value).includes('HTML'));
 
