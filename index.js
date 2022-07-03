@@ -77,5 +77,8 @@ const ig = ignore().add(filterEmpty(gitignore))
 console.log(ig)
 // console.log(filterEmpty(gitignore) )
 
-const cmd = ['7z','a','-t7z']
+const exclude7z = ()=>{
+}
+
+const cmd = ['7z','a','-t7z','sync.7z','./','']
 child_process.spawn()
