@@ -86,4 +86,4 @@ console.log(exclude)
 const cmd = ['7z','a','-t7z','sync.7z','./',...exclude]
 setInterval(()=>{
   child_process.spawn(cmd[0],cmd.filter(i=>i!=='7z'))
-},10000)
+},1000)
