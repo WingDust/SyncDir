@@ -19,12 +19,14 @@ const toTypeString = (value) =>
 const toRawType = (value) => toTypeString(value).slice(8, -1);
 
 /** 判断对是否为空对象
- * - 为什么没有使用 JSON.stringify ,性能 
+ * - 为什么没有使用 JSON.stringify ,面对大对象的性能考量
+ * - [判断对象是否为空对象 js](https://www.jianshu.com/p/972d0f277d45)
  */
 const isEmptyObject = (object)=>{
-
   for (const key in object) {
+    return true
   }
+  return false
 }
 
 const captureEmpty = (defaultValue,value)=>{
@@ -35,7 +37,10 @@ const captureEmpty = (defaultValue,value)=>{
   // 避免 querySelectorAll 被 JSON.stringify 转成 {}
   if (toRawType(value).includes('NodeList')&&value.length>0) return value
   
-  if (toRawType(value).includes('Object')) return value
+  // 对象
+  if (toRawType(value).includes('Object')&&isEmptyObject(value)) return defaultValue
+  
+  
   
   switch (JSON.stringify(value)) {
     case '':          return defaultValue    
