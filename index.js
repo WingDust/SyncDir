@@ -3,8 +3,8 @@ const fs = require("fs");
 const archiver = require("archiver");
 const ignore = require("ignore");
 
-/** 在数据处理过程表示 无意义的值
- * 
+/** 在数据处理过程中 无意义的值
+ j 
  */
 const nilValue = ['',null,undefined,[],{},false]
 
@@ -13,12 +13,11 @@ const objectToString = Object.prototype.toString
 const toTypeString = (value) =>
   objectToString.call(value)
 
-/*p 
+/** extract "RawType" from strings like "[object RawType]"
  * 
  */
-const toRawType = (value) => {
-  return toTypeString(value).slice(8, -1);
-}
+const toRawType = (value) => toTypeString(value).slice(8, -1);
+
 
 const captureEmpty = (defaultValue,value)=>{
   // console.log('val',value,JSON.stringify(value),toRawType(value).includes('HTML'));
