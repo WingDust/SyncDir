@@ -26,6 +26,9 @@ const captureEmpty = (defaultValue,value)=>{
   if (toRawType(value).includes('HTML')) return value
   // 避免 querySelectorAll 被 JSON.stringify 转成 {}
   if (toRawType(value).includes('NodeList')&&value.length>0) return value
+  
+  if (toRawType(value).includes('Object')) return value
+  
   switch (JSON.stringify(value)) {
     case '':          return defaultValue    
     case 'null':      return defaultValue        
